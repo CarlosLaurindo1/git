@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<link type="text/css" rel="stylesheet" href="basico_css3.css" />
+        <title>Primeiro Índice do HTML</title>
+    </head>
+    <body>
+       <h1 align="justify"> DOCUMENTAÇÃO SOBRE CONVENÇÃO DE COMMITS E SEMVER</h1> 
+       <br>
+       <h2>INTRODUÇÃO</h2>
+       <br>
+       <br>
+        <p>Aqui serão apresentados os detalhes da semântica de versionamento, bem como as convenções de criação de commits. Elas são utilizadas para determinar boas práticas na hora do envio dos códigos aos repositórios e estabelecem a forma que será gerado o versionamento das versões.
+        </p> 
+        <p>Neste trabalho, serão apresentados os aspectos gerais seja da convenção, seja da semântica, considerando os dados específicos disponibilizados pelos sites das duas organizações: Conventional Commits e SemVer.
+        </p>
+        <p>O trabalho foi aplicado durante as aulas dos alunos do curso de análise e desenvolvimento de sistemas da UniSENAI, campus Joinville. E após posto em prática realizando novos commits em projetos individuais de cada um dos alunos, passando a seguir as regras estabelecidas pelas organizações.
+        </p>
+        <br>
+        <h2>CONTEXTO GERAL</h2>
+        <br>
+        <br>
+        <p>Antes de apresentarmos a padronização de um commit, falaremos sobre o que é um commit. Para isso a Atlasian apresenta um tutorial e nele nos informa que os commits nada mais são, do que unidades estruturais de um cronograma de projeto (web). Ou seja, sempre que houver a necessidade de anexar alguma parte de do projeto, é realizado o commit. Já abordado em textos anteriores, existe um comando a ser executado neste processo que é o: git commit ou git commit -m “DIGITE UMA MENSAGEM AQUI”.
+        </p>
+        <p>Porém, no aspecto corporativo, o ideal é que sejam acrescentados itens com maior robustez ao realizar o envio. Claro, é um resumo, mas que considere algumas convenções. Essas convenções são chamadas de “Conventional Commits” ou em uma tradução ideal “Convenção de commits”. 
+        </p>
+        <p>A própria organização da “conventional commits” explica que essa convenção determina um conjunto de normas para criação dos commits explicitamente, para facilitar a criação de ferramentas automatizadas.
+        </p>
+        <p>Sendo assim, ao realizar o envio do código através de um commit, é ideal se atentar a um conjunto de fatores para melhor ordenar e adicionar informações. Essas normas que são aplicadas pela convenção, seguem a Semântica do versionamento, que descrevem os recursos, correções e alterações que podem interferir na compatibilidade das mensagens de commits. (CONVENTIONAL COMMITS, web).
+        </p>
+        <p>A semântica do versionamento ou “Semantica VErsioning” ou ainda “SemVer” é explicada no seguinte contexto: no mundo do gerenciamento de software existe um lugar obscuro que é chamado de “inferno de dependências”. Maior que qualquer sistema ou pacotes integrados a um software. Em sistemas com muitas dependências, versionar novos pacotes podem se tornar um pesadelo, caso as especificações das dependências estiverem sem a devida descrição. (SEMVER, web)
+        </p>
+        <p>Deste modo a solução foi proposta pela organização SemVer, que propôs um conjunto de regras e requisições que ensinam como numerar as versões que são assinadas e incrementadas. Essas regras são básicas, porém não necessariamente limitadas as pré-existentes. São indicadas como boas práticas e de uso em plataformas pagas ou de open-source. Para que isso funcione, é necessário em primeiro lugar declarar a API pública. Isso pode consistir em documentação bem estruturada para o código em si. O ideal é que a API seja limpa e precisa. Uma vez identificada a API, deve comunicar as alterações realizadas com os incrementos específicos para o número desta versão. Considerar o seguinte formato: X.Y.Z onde X é o maior número, Y é o menor número e Z é o número do pacote. Correções de bugs não afetam no incremento da API para o pacote de versionamento.
+        </p>
+        <br>
+        <h2>PADRONIZAÇÃO DE COMMITS</h2>
+        <br>
+        <br>
+        <p>Para que o commit siga as regras da convenção, a mensagem do commit deve ser estruturada da seguinte forma:</p>
+        <p>tipo [escopo opcional]: [descrição]</p>
+        <br>
+        <p>[corpo opcional]</p>
+        <br>
+        <p>[rodapé opcional]</p>
+        <br>
+        <p>O commit tem os seguintes elementos de estrutura, a fim de apresentar aos utilizadores da biblioteca as suas formas conforme apresentam a Conventional Commits (web):
+        </p>
+        <ol>
+            <li>1 – fix: quando utilizado este tipo, sugere a solução de um problema na base de código (relacionado com o patch [ou pacote indicados no tópico inicial deste trabalho] do versionamento semântico);
+            </li>
+            <li>2 – feat: ao usar este tipo, inclui um novo recurso na base de código (relacionado com o o minor [ou o menor número indicado no tópico anterior] da semântica de versionamento);
+            </li>
+            <li>3 – BREAKING CHANGE: ao usar este tipo, no começo do texto do corpo ou do rodapé opcional, inclui uma modificação que altera a compatibilidade com a API (e isso se relaciona com o major [ou maior número] do versionamento semântico). A BREAKING CHANGE pode ser utilizada em commits de qualquer tipo;
+            </li>
+            <li>4 – Outros tipos, podem ser:
+                <li>Build: Alterações que afetam a build do sistema ou dependências externas;</li>
+                <li>Ci: alterações nas configurações internas ou arquivos de configuração;</li>
+                <li>Docs: apenas para alterações em documentação;</li>
+                <li>Perf: um código que altera a performance do software;</li>
+                <li>Refactor: um código que também corrige bugs e adicionam novas features;</li>
+                <li>Test: adicionando testes esquecidos ou corrigindo testes.</li>
+            </li>
+        </ol>
+        <br>
+        <h2>ESPECIFICAÇÕES DA SEMVER</h2>
+        <br>
+        <br>
+        <p>São utilizadas algumas palavras chaves, dentro das seguintes regras estabelecidas pela PRESTON-WERNER (web):
+        </p>
+        <ol>
+            <li>1 – A mensagem do commit DEVE ser prefixada inserindo o tipo, conforme abordados no tópico anterior, que segue um escopo que é OPCIONAL e é OBRIGATÒRIO terminar com dois-pontos e um espaço;
+            </li>
+            <li>2 – O tipo feat, mencionado no tópico de padronização dos commits DEVE ser aplicado quando adiciona um nvoo recurso co aplicativo ou bibliotec;
+            </li>
+            <li>3 – Já o tipo fix, DEBE ser usando quando é uma correção de um aplicativo ou biclioteca;
+            </li>
+            <li>4 – O escopo PODE ser adicionado após o tipo. E DEVE consistir em um substantivo que descreva uma seção de código entre parênteses;
+            </li>
+            <li>5 – A descrição DEVE ser realizada após o prefixo tipo/escopo e resume as alterações de código;
+            </li>
+            <li>6 – O corpo de mensagem PODE ser fornecido adicionando mais informações em relação a descrição. DEVE começar após uma linha em branco após a descrição;
+            </li>
+            <li>7 – Um rodapé PODE ser fornecido após uma linha em branco que sucede o corpo. Em caso de uma modificação de compatibilidade DEVE ser inserido o BRAKING CHANGE, conforme instruções do tópico 3 do capítulo anterior;
+            </li>
+            <li>8 – O BREAKING CHANGE DEVE ser indicado logo no início da seção do corpo ou rodapé;
+            </li>
+            <li>9 – Uma descrição DEVE ser informada logo após o BREAKING CHANGE: mostrando quais modificações ocorreram a API;
+            </li>
+            <li>10 – Além de feat e fix, outros tipos PODEM ser usados nas mensagens do commit;
+            </li>
+            <li>11 – Cada seção de informação que incrementam o commit NÂO DEVE ser tratada como case sensitive com exceção do BREAKING CHANGE que DEVE ser maiúscula;
+            </li>
+            <li>12 – O sinal “!” PODE ser acrescentado ao anteceder os “:” no prefixo tipo/escopo, para chamar atenção. 
+            </li>
+        </ol>
+        <br>
+        <h2>CONCLUSÃO</h2>
+        <br>
+        <br>
+        <p>Uma vez entendido como são aplicadas as regras, com o auxílio das organizações, entendemos que essas regras, são apenas para o melhor desempenho e criação de commits em projetos como boas práticas no ato do envio.
+        </p>
+        <p>Neste trabalho, foram apresentados os aspectos gerais tanto da convenção, quanto da semântica, considerando os dados específicos disponibilizados pelos sites das duas organizações: Conventional Commits e SemVer.
+        </p>
+        <p>Após descritas e especificadas as regras os alunos se tornam aptos para criação dos commits respeitam as regras da semântica e da convenção dos commits.
+        </p>
+        <br>
+        <h2>REFERÊNCIAS</h2>
+        <br>
+        <br>
+        <p>ATLASSIAN. Git commit | Atlassian Git Tutorial. Disponível em: <https://www.atlassian.com/br/git/tutorials/saving-changes/git-commit#:~:text=Os%20commits%20s%C3%A3o%20as%20unidades>. Acesso em: 22 mar. 2023.
+        </p>
+        <p>Conventional Commits. Disponível em: <https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/>. Acesso em: 22 mar. 2023.
+        </p>
+        <p>PRESTON-WERNER, T. Semantic Versioning 2.0.0. Disponível em: <https://semver.org/>. Acesso em: 22 mar. 2023.
+        </p>
+    </body>
+</html>
